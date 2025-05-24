@@ -1,4 +1,4 @@
-const API_KEY = "d744747845274420a813d4adf5852c66"
+const API_KEY = "f213a563c15940a39114608942c69756"
 
 const url = "https://newsapi.org/v2/everything?q="
 
