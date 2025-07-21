@@ -1,3 +1,5 @@
+// Triggering redeployment on Render – minor comment added
+
 const express = require("express");
 const fetch = require("node-fetch");
 const cors = require("cors");
@@ -24,9 +26,11 @@ app.get("/news", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch news" });
   }
 });
+
 app.get("/check-key", (req, res) => {
   res.send(`API Key: ${NEWS_API_KEY || "undefined"}`);
 });
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
