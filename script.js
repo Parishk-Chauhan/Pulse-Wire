@@ -1,5 +1,4 @@
-const API_KEY = "d744747845274420a813d4adf5852c66";
-const url = "https://newsapi.org/v2/everything?q=";
+const backendUrl = "https://pulse-wire-w6cf.onrender.com/news";
 
 window.addEventListener('load', () => fetchNews("India"));
 
@@ -9,13 +8,15 @@ function reload() {
 
 async function fetchNews(query) {
     try {
-        const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+        const res = await fetch(`${backendUrl}?topic=${query}`);
         const data = await res.json();
+        console.log("Fetched data:", data);
         bindData(data.articles);
-    } catch (error) {
-        console.error("Error fetching news:", error);
+    } catch (err) {
+        console.error("Error fetching news:", err);
     }
 }
+
 
 function bindData(articles) {
     const cardsContainer = document.getElementById('cards-container');
