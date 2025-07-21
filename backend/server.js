@@ -17,7 +17,7 @@ app.get("/news", async (req, res) => {
     console.log("Using API Key:", NEWS_API_KEY);
     console.log("Fetch URL:", `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${NEWS_API_KEY}`);
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=in&category=${topic}&apiKey=${NEWS_API_KEY}`
+      `https://newsapi.org/v2/everything?q=${topic}&from=2025-06-21&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`
     );
     const data = await response.json();
     res.json(data);
