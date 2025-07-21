@@ -1,6 +1,6 @@
 const backendUrl = "https://pulse-wire-w6cf.onrender.com/news";
 
-window.addEventListener('load', () => fetchNews("India"));
+window.addEventListener('load', () => fetchNews("general"));
 
 function reload() {
     window.location.reload();
